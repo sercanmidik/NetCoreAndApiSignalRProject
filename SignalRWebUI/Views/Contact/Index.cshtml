@@ -1,0 +1,57 @@
+﻿@model List<ResultContactDto>
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/AdminLayout/Index.cshtml";
+	int count = 0;
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">İletişim İşlemleri</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title">İletişim Listesi</div>
+					</div>
+					<div class="card-body">
+						<div class="card-sub">
+							İletişim İle İlgili İşlemleri Aşağıdan Gerçekleştirebilirsiniz
+						</div>
+						<table class="table mt-3">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Lokasyon</th>
+									<th scope="col">Telefon Numarası</th>
+									<th scope="col">Mail</th>
+									<th scope="col">Footer Description</th>
+									<th scope="col">Sil</th>
+									<th scope="col">Güncelle</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach (var item in Model)
+								{
+									count++;
+									<tr>
+										<td>@count</td>
+										<td>@item.Location</td>
+										<td>@item.PhoneNumber</td>
+										<td>@item.Mail</td>
+										<td>@item.FooterDescription</td>
+										<td><a href="/Contact/ContactDelete/@item.ContactId" class="btn btn-outline-danger">Sil</a></td>
+										<td><a href="/Contact/ContactUpdate/@item.ContactId" class="btn btn-outline-succes">Güncelle</a></td>
+									</tr>
+								}
+							</tbody>
+						</table>
+						<a href="/Contact/ContactCreate/" class="btn btn-outline-primary">Yeni İletişim Girisi</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+

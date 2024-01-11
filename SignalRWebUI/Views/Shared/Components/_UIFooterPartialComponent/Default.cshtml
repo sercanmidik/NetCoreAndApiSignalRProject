@@ -1,0 +1,47 @@
+﻿@model List<ResultSocialMediaDto>
+<footer class="footer_section">
+    <div class="container">
+        <div class="row">
+            @await Component.InvokeAsync("_UIFooterContactPartialComponent")
+            <div class="col-md-4 footer-col">
+                <div class="footer_detail">
+                    <a href="" class="footer-logo">
+                        Bahtiyar Döner ve Pide Salonu
+                    </a>
+                    <p>
+                        Bizi Sosyal Media Adreslerimizden Takip Edebilirsiniz
+                    </p>
+                 
+                        <div class="footer_social">
+                        @foreach (var item in Model)
+                        {
+                            <a href="@item.Url">
+                                <i class="@item.Title" aria-hidden="true"></i>
+                            </a>
+                        }
+                        </div>
+                    
+                </div>
+            </div>
+            <div class="col-md-4 footer-col">
+                <h4>
+                    Açılış Saati
+                </h4>
+                <p>
+                    Pazartesi-Cumartesi
+                </p>
+                <p>
+                    07.00  -22.00 
+                </p>
+            </div>
+        </div>
+        <div class="footer-info">
+            <p>
+                &copy; <span id="displayYear"></span> Tüm Hakları Saklıdır
+               
+                &copy; <span id="displayYear"></span> Sercan MIDIK
+          
+            </p>
+        </div>
+    </div>
+</footer>

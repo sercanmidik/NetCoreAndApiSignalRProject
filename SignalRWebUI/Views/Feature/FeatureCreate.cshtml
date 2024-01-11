@@ -1,0 +1,64 @@
+﻿@model CreateFeatureDto
+@{
+    ViewData["Title"] = "FeatureCreate";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Öne Çıkan İslemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post" asp-action="FeatureCreate" asp-controller="Feature">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Öne Çıkan İşlem Formu</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label asp-for="Title1">1. Başlık</label>
+                                <input type="text" class="form-control" placeholder="1. Başlığı Giriniz..." asp-for="Title1">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label asp-for="Description1">1. Açıklama</label>
+                                <input type="text" class="form-control" placeholder="1. Açıklamayı Giriniz..." asp-for="Description1" />
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label asp-for="Title2">2. Başlık</label>
+                                <input type="text" class="form-control" placeholder="2. Başlığı Giriniz..." asp-for="Title2">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label asp-for="Description2">2. Açıklama</label>
+                                <input type="text" class="form-control" placeholder="2. Açıklamayı Giriniz..." asp-for="Description2" />
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label asp-for="Title3">3. Başlık</label>
+                                <input type="text" class="form-control" placeholder="3. Başlığı Giriniz..." asp-for="Title3">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label asp-for="Description3">3.Açıklama</label>
+                                <input type="text" class="form-control" placeholder="3. Açıklamayı Giriniz..." asp-for="Description3" />
+                            </div>
+                        </div>
+                      
+                        <div class="card-action">
+                            <button type="submit" class="btn btn-success">Öne Çıkan Ekle</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

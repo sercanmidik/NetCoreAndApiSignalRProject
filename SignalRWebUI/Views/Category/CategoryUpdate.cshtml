@@ -1,0 +1,35 @@
+﻿@model UpdateCategoryDto
+@{
+    ViewData["Title"] = "CategoryUpdate";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">Kategori Güncelleme İslemleri</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<form method="post">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">Kategori Güncelleme Formu</div>
+						</div>
+						<div class="card-body">
+							<input type="hidden" asp-for="CategoryId" />
+							<input type="hidden" asp-for="CategoryStatus" />
+							<div class="form-group">
+								<label asp-for="CategoryName">Kategori Adı</label>
+								<input type="text" class="form-control" placeholder="Kategori Adı Giriniz..." asp-for="CategoryName">
+							</div>
+						</div>
+						<div class="card-action">
+							<button type="submit" class="btn btn-success">Kategori Güncelle</button>
+						</div>
+
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+

@@ -1,0 +1,60 @@
+﻿@model List<ResultOrderDto>
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/AdminLayout/Index.cshtml";
+	int count = 0;
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">Sipariş İşlemleri</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title">Sipariş Listesi</div>
+					</div>
+					<div class="card-body">
+						<div class="card-sub">
+							Sipariş İle İlgili İşlemleri Aşağıdan Gerçekleştirebilirsiniz
+						</div>
+						<table class="table mt-3">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Masa Numarası</th>
+									<th scope="col">Durum</th>
+									<th scope="col">Toplam Tutar</th>
+									<th scope="col">Detay</th>
+									<th scope="col">Yeni Siparis</th>
+									<th scope="col">Hesap Al</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach (var item in Model)
+								{
+									count++;
+									<tr>
+										<td>@count</td>
+										<td>@item.TableNumber</td>
+										<td>@item.Description</td>
+										<td>@item.TotalPrice</td>
+										<td><a href="/OrderDetail/OrderDetailList/@item.OrderId" class="btn btn-outline-succes">Detay Bak</a></td>
+										<td><a href="/OrderDetail/OrderDetailCreate/@item.OrderId" class="btn btn-outline-succes">Sipariş Oluştur</a></td>
+										<td><a href="/Order/OrderClosed?orderId=@item.OrderId" class="btn btn-outline-succes">Hesap Kapat</a></td>
+									</tr>
+								}
+							</tbody>
+						</table>
+						<a href="/Order/OrderCreate/" class="btn btn-outline-primary">Yeni Sipariş Girisi</a>
+					</div>
+				</div>
+
+
+
+			</div>
+
+		</div>
+	</div>
+</div>
+

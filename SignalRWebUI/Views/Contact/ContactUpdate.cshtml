@@ -1,0 +1,52 @@
+﻿@model UpdateContactDto
+@{
+    ViewData["Title"] = "ContactUpdate";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">İletişim Güncelleme İslemleri</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<form method="post">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">İletişim Güncelleme Formu</div>
+						</div>
+						<input type="hidden" asp-for="ContactId" />
+						<div class="card-body">
+							<div class="form-group">
+								<label asp-for="Location">Lokasyon Giriniz</label>
+								<input type="text" class="form-control" placeholder="Locasyon Giriniz..." asp-for="Location">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label asp-for="PhoneNumber">Rezervasyon Telefon Numarası</label>
+								<input type="text" class="form-control" placeholder="Telefon Numarası Giriniz..." asp-for="PhoneNumber">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label asp-for="Mail">Rezervasyon Mail Adresi</label>
+								<input type="text" class="form-control" placeholder="Mail Adresi Giriniz..." asp-for="Mail">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label asp-for="FooterDescription">Rezervasyon Kişi Sayısı</label>
+								<input type="text" class="form-control" placeholder="Rezerve Edilecek Sayı Giriniz..." asp-for="FooterDescription">
+							</div>
+						</div>
+						<div class="card-action">
+							<button type="submit" class="btn btn-success">İletişim Güncelle</button>
+						</div>
+
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+

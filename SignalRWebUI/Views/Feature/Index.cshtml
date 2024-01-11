@@ -1,0 +1,64 @@
+﻿@model List<ResultFeatureDto>
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/AdminLayout/Index.cshtml";
+	int count = 0;
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">Öne Çıkan İşlemler</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title">Vitrin Listesi</div>
+					</div>
+					<div class="card-body">
+						<div class="card-sub">
+							Vitrinlerle İle İlgili İşlemleri Aşağıdan Gerçekleştirebilirsiniz
+						</div>
+						<table class="table mt-3">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">İlk Başlık</th>
+									<th scope="col">İlk Açıklama</th>
+									<th scope="col">İkinci Başlık</th>
+									<th scope="col">İkinci Açıklama</th>
+									<th scope="col">Ücüncü Başlık</th>
+									<th scope="col">Ücüncü Açıklama</th>
+									<th scope="col">Sil</th>
+									<th scope="col">Güncelle</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach (var item in Model)
+								{
+									count++;
+									<tr>
+										<td>@count</td>
+										<td>@item.Title1</td>
+										<td>@item.Description1</td>
+										<td>@item.Title2</td>
+										<td>@item.Description2</td>
+										<td>@item.Title3</td>
+										<td>@item.Description3</td>
+										<td><a href="/Feature/FeatureDelete/@item.FeatureId" class="btn btn-outline-danger">Sil</a></td>
+										<td><a href="/Feature/FeatureUpdate/@item.FeatureId" class="btn btn-outline-succes">Güncelle</a></td>
+									</tr>
+								}
+							</tbody>
+						</table>
+						<a href="/Feature/FeatureCreate/" class="btn btn-outline-primary">Yeni Vitrin Girisi</a>
+					</div>
+				</div>
+
+
+
+			</div>
+
+		</div>
+	</div>
+</div>
+

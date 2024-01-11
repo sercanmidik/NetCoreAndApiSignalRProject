@@ -1,0 +1,51 @@
+﻿@model CreateDiscountDto
+@{
+    ViewData["Title"] = "DiscountCreate";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">İndirim İslemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post" asp-action="DiscountCreate" asp-controller="Discount">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">İndirim Formu</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label asp-for="Title">İndirim Başlık</label>
+                                <input type="text" class="form-control" placeholder="İndirim Başlığı Giriniz..." asp-for="Title">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label asp-for="Amount">İndrim Oranı</label>
+                                <input type="text" class="form-control" placeholder="İndirim Oranı Giriniz..." asp-for="Amount"/>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label asp-for="Description">İndrim Açıklama</label>
+                                <textarea rows="5" type="text" class="form-control" placeholder="İndirim Açıklama Giriniz..." asp-for="Description"></textarea>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label asp-for="ImageUrl">İndirim Resim Yolu</label>
+                                <input type="text" class="form-control" placeholder="İndirim Resim Yolu Giriniz..." asp-for="ImageUrl">
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button type="submit" class="btn btn-success">İndirim Ekle</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

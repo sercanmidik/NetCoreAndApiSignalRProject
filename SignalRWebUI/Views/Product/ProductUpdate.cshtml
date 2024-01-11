@@ -1,0 +1,59 @@
+﻿@model UpdateProductDto
+@{
+    ViewData["Title"] = "ProductUpdate";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">Ürün İslemleri</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<form method="post">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">Ürün Güncelleme Formu</div>
+						</div>
+						<input type="hidden" asp-for="ProductId" />
+						<input type="hidden" asp-for="ProductStatus" />
+						<div class="card-body">
+							<div class="form-group">
+								<label asp-for="CategoryId">Ürün Kategori Giriniz</label>
+								@Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.categories, new { @class = "form-control" })
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label asp-for="ProductName">Ürün Adı</label>
+								<input type="text" class="form-control" placeholder="Ürün Adı Giriniz..." asp-for="ProductName">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label asp-for="Price" id="price">Ürün Fiyatı</label>
+								<input type="text" class="form-control" placeholder="Ürün Fiyatı Giriniz..." asp-for="Price">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label asp-for="ImageUrl">Ürün Görseli</label>
+								<input type="text" class="form-control" placeholder="Ürün Görseli Giriniz..." asp-for="ImageUrl">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label asp-for="Description">Ürün Açıklamasını Giriniz</label>
+								<input type="text" class="form-control" placeholder="Ürün Açıklaması Giriniz..." asp-for="Description">
+							</div>
+						</div>
+						<div class="card-action">
+							<button type="submit" class="btn btn-success">Ürün Güncelle</button>
+						</div>
+
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+

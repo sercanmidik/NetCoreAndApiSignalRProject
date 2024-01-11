@@ -1,0 +1,51 @@
+﻿@model CreateContactDto
+@{
+    ViewData["Title"] = "ContactCreate";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">İletişim İslemleri</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<form method="post" asp-action="ContactCreate" asp-controller="Contact">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">İletişim Formu</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label asp-for="Location">Lokasyon Giriniz</label>
+								<input type="text" class="form-control" placeholder="Locasyon Giriniz..." asp-for="Location">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label asp-for="PhoneNumber">İletişim Telefon Numarası</label>
+								<input type="text" class="form-control" placeholder="Telefon Numarası Giriniz..." asp-for="PhoneNumber">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label asp-for="Mail">İletişim Mail Adresi</label>
+								<input type="text" class="form-control" placeholder="Mail Adresi Giriniz..." asp-for="Mail">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label asp-for="FooterDescription">Footer Description</label>
+								<textarea row="5" class="form-control" asp-for="FooterDescription" placeholder="Açıklama....."></textarea>
+							</div>
+						</div>
+						<div class="card-action">
+							<button type="submit" class="btn btn-success">İletişim Ekle</button>
+						</div>
+
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
